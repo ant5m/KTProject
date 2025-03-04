@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Requests</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/requests.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="requests.html">Request</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="requests-container">
+        <div class="request-options">
+            <button class="request-option-btn" data-option="add">Add New Project</button>
+        </div>
+
+        <!-- Join Projects Section -->
+        <section id="join-projects" class="request-section active">
+            <h1>Available Projects</h1>
+            <div class="project-filters">
+                <select id="major-filter">
+                    <option value="">Filter by Major</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="business">Business</option>
+                    <option value="engineering">Engineering</option>
+                </select>
+                <select id="expertise-filter">
+                    <option value="">Filter by Expertise</option>
+                    <option value="web">Web Development</option>
+                    <option value="data">Data Science</option>
+                    <option value="finance">Finance</option>
+                </select>
+            </div>
+
+            <div class="projects-container">
+                <!-- Project cards will be dynamically populated here -->
+                <div class="project-card">
+                    <h2>Project Title</h2>
+                    <div class="project-meta">
+                        <span class="major">Major: Computer Science</span>
+                        <span class="expertise">Expertise: Web Development</span>
+                    </div>
+                    <p class="project-description">Project description will be loaded from the database...</p>
+                    <div class="project-footer">
+                        <span class="status">Status: Open</span>
+                        <button class="join-project">Join Project</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Project Section -->
+        <section id="add-project" class="request-section">
+            <h1>Add New Project</h1>
+            <form class="project-form">
+                <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="project-major">Major</label>
+                    <select id="project-major" required>
+                        <option value="">Select Major</option>
+                        <option value="cs">Computer Science</option>
+                        <option value="business">Business</option>
+                        <option value="engineering">Engineering</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-expertise">Expertise Required</label>
+                    <select id="project-expertise" required>
+                        <option value="">Select Expertise</option>
+                        <option value="web">Web Development</option>
+                        <option value="data">Data Science</option>
+                        <option value="finance">Finance</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-description">Project Description</label>
+                    <textarea id="project-description" rows="5" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="project-requirements">Requirements</label>
+                    <textarea id="project-requirements" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="submit-project">Submit Project</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

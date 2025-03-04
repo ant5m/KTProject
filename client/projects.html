@@ -4,5 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="requests.html">Request</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-list">
+        <h1>Projects</h1>
+        <div class="project-filters">
+            <select id="major-filter">
+                <option value="">Filter by Major</option>
+                <option value="cs">Computer Science</option>
+                <option value="business">Data Science</option>
+                <option value="engineering">Engineering</option>
+                <option value="business">Business</option>
+            </select>
+            <select id="expertise-filter">
+                <option value="">Filter by Expertise</option>
+                <option value="web">Web Development</option>
+                <option value="data">Data Science</option>
+                <option value="finance">Finance</option>
+            </select>
+        </div>
+
+        <div class="projects-container">
+            <!-- Project cards will be dynamically populated here -->
+            <div class="project-card">
+                <h2>Project Title</h2>
+                <div class="project-meta">
+                    <span class="major">Major: Computer Science</span>
+                    <span class="expertise">Expertise: Web Development</span>
+                </div>
+                <p class="project-description">Project description will be loaded from the database...</p>
+                <div class="project-footer">
+                    <span class="status">Status: Open</span>
+                    <button class="join-project">Join Project</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

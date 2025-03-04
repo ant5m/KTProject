@@ -1,3 +1,5 @@
 # KTProject
 Semester Long project for the improvement of Kappa Theta Pi Lamba Chapter @ Boston University
 Introducing KTProject – a professional web platform dedicated to showcasing the innovative projects of KTP members. This centralized portal not only facilitates collaboration by enabling members to connect based on major, expertise, academic level, and project specialization—such as financial initiatives and data-driven research. This also serves as a dynamic learning environment where members can significantly build and enhance their technical skills. By exploring detailed project portfolios on Git and engaging with peers across various disciplines, users can continuously advance their expertise and drive forward the future of KTP innovation with confidence and professionalism.
+# Resources 
+https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging 

@@ -38,6 +38,40 @@ const items = [
       "docs.google.com/document/d/1H_jhiO8ezXTE_ShxQk0Ed5Jigak1fToYE42BQkRNkqw/edit?tab=t.0",
     author: "Tye Robison and Co.",
   },
+  {
+    id: 3,
+    name: "Josh-and-Thomas Portfolio Website",
+    description:
+      "This website highlights our personal portfolios and using complex animations and designs. Through javascript, css, and html we display our projects, expierences, technical skills, etc. This site gets occasionally updated with our most recent information.",
+    type: "Computer Science",
+    difficulty: "?",
+    image: "jhomas.png",
+    repoWebsite: "thomas-and-josh.com/",
+    author: "Josh and Thomas",
+  },
+  {
+    id: 4,
+    name: "Sentiment-Driven-Stock-Selector",
+    description:
+      "This project collects daily headlines for each company in the S&P 500 and performs sentiment analysis on them. It collects 100 headlines for each company and then gives a polarity score to the five most relevant headlines. Then, it calculates a polarity score for each company based on the average of the 5 headline scores. After, it compares the scores with the percentage change in the stock price from yesterday's closing price to today's open price.",
+    type: "Data Science",
+    difficulty: "?",
+    image: "sentiment.png",
+    repoWebsite:
+      "github.com/thomas211738/Sentiment-Driven-Stock-Selector?tab=readme-ov-file#sentiment-driven-stock-selector",
+    author: "Thomas Yousef and Josh Leeds",
+  },
+  {
+    id: 5,
+    name: "Movie Reccomendation",
+    description:
+      "I built a full-stack web app that utilizes machine-learning on 58,000+ data points to generate movie recommendations based on a user's Letterboxd ratings and 10+ unique profile statistics for 2,000+ users in 50+ countries.",
+    type: "Computer Science",
+    difficulty: "?",
+    image: "letterboxed.png",
+    repoWebsite: "recommendations.victorverma.com/",
+    author: "Victor Verma",
+  },
 ];
 
 function Projects() {

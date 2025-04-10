@@ -11,27 +11,32 @@ const getBadgeClass = (type: string): string => {
     'Mathematics/Statistics': 'bg-mathematics',
     'Questrom': 'bg-questrom'
   };
-  return typeMap[type] || 'bg-secondary'; // fallback to secondary if type not found
+  return typeMap[type] || "bg-secondary";
 };
 
 const items = [
   {
     id: 1,
-    name: "SpotiRanked",
-    description: "blahblahc",
-    type: "Computer Science",
-    difficulty: 2,
-    image: "/spotiranked.jpg",
-    repoWebsite: "google.com"
+    name: "Boston Bus Equity",
+    description:
+      "Public transport plays an important role in the quality of life for residents in Massachusetts and Boston in terms of economic development, the environment, and equity. The goal of this project is to better understand the impact of bus performance on Boston residents by using MBTA bus data to examine service performance trends by geography.",
+    type: "Data Science",
+    difficulty: 5,
+    image: "/Boston All Stations.png",
+    repoWebsite: "github.com/michaelkrah/506-data-analysis",
+    author: "Anthony Sevilla-Meza",
   },
   {
     id: 2,
-    name: "Riho's Amazing beautiful project",
-    description: "#ILOVEUPRO",
-    type: "Electrical Engineering",
+    name: "DCF: Broken Documentary Computational Journalism Investigation",
+    description:
+      "This investigation aimed to explore the gap between DCF's budget and its outcomes, focusing on how money within DCF is being spent and where it ultimately goes. We discovered that DCF funds flow through contractors to subcontractors and we specifically examined 129 subcontractor companies linked to 56 high-paying congregate care facilities directly contracted by DCF. We uncovered indicators of business inauthenticity and malpractice, which we used to create a risk assessment framework that calculates a risk score percentage for each subcontractor.",
+    type: "Data Science",
     difficulty: 5,
-    image: "/riho_image.png",
-    repoWebsite: "google.com"
+    image: "/Risk Score Histogram from Tye Robison.png",
+    repoWebsite:
+      "docs.google.com/document/d/1H_jhiO8ezXTE_ShxQk0Ed5Jigak1fToYE42BQkRNkqw/edit?tab=t.0",
+    author: "Tye Robison and Co.",
   },
 ];
 
@@ -41,21 +46,21 @@ function Projects() {
       <h1 className="mb-4">Projects</h1>
       <div className="list-group list-group-flush">
         {items.map((item) => (
-          <a 
-            key={item.id} 
-            href={`https://${item.repoWebsite}`} 
-            className="list-group-item list-group-item-action" 
-            target="_blank" 
+          <a
+            key={item.id}
+            href={`https://${item.repoWebsite}`}
+            className="list-group-item list-group-item-action position-relative"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <div className="d-flex align-items-center">
-              <img 
-                src={item.image} 
-                width="200" 
-                height="200" 
+              <img
+                src={item.image}
+                width="200"
+                height="200"
                 alt={item.name}
                 className="me-3 rounded"
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
               <div>
                 <h3 className="mb-2">{item.name}</h3>
@@ -67,6 +72,9 @@ function Projects() {
                   <p className="mb-0">Difficulty: {item.difficulty}/5</p>
                 </div>
               </div>
+            </div>
+            <div className="position-absolute top-0 end-0 p-2">
+              <span className="badge bg-secondary">By {item.author}</span>
             </div>
           </a>
         ))}

@@ -1,5 +1,4 @@
 import "../styles.scss";
-
 // Define the badge class mapping
 const getBadgeClass = (type: string): string => {
   const typeMap: { [key: string]: string } = {
@@ -75,6 +74,8 @@ const items = [
 ];
 
 function Projects() {
+
+     
   return (
     <div className="container mt-4">
       <h1 className="mb-4">Projects</h1>

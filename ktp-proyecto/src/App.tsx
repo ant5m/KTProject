@@ -1,5 +1,6 @@
 //import React from "react";
 import Projects from "./components/Projects";
+import Members from "./Pages/Members/Members";
 //import { read } from "./components/supabase/functions";
 import "./styles.scss";
 import {GraphCanvas} from "reagraph"
@@ -8,12 +9,8 @@ function App() {
   //const filter = ["Computer Science", "Data Science", "Business", "Research"];
 
 
-
-  return (
-    <div className="App">
-       <h1>Hello Universe</h1>
-
-<div>
+  /* 
+  nod egraph: <div>
        <GraphCanvas 
         
       nodes={[
@@ -36,6 +33,15 @@ function App() {
     ]}
        />
     </div>
+
+  */
+
+  return (
+    <div className="App">
+      
+  <Projects/>
+ 
+ 
     </div>
   
   );

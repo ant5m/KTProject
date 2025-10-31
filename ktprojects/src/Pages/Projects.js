@@ -11,7 +11,7 @@ export default function Projects() {
  
   return (
     <div className="App">
-     <h1 style = {{color: "black"}}>Project</h1>
+    
     </div>
   );
 }

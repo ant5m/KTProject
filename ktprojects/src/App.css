@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding-top: 10em;
 }
 
 .App-logo {
@@ -62,4 +63,101 @@ header .headerNavUL li:hover{
   text-decoration:none;
   color: rgb(0, 0, 0); 
   font-weight: 500;
+  align-self: center;
+  
+}
+
+.learnMore{
+      border: solid rgba(13, 69, 172) .15em;
+        padding-inline: 25;
+        padding-block:10;
+        background-color:rgb(13, 69, 172);
+        color:white;
+        font-size: 1rem;
+        font-weight: 500; 
+        cursor:pointer;
+        transition-duration: .25s;;
+
+}
+.learnMore:hover{
+  background-color: transparent;
+  color:rgb(12, 63, 158);
+ 
+}
+
+.learnMore:active{
+  font-size: 1.25em;
+}
+
+
+.filter{
+  transition-duration: .25s;
+}
+
+.filter:active{
+   opacity: 0;
+}
+
+
+.opacheBackground{
+  background-color:rgba(0, 0, 0, 0.52);
+ position: absolute; 
+ z-index: 10000;
+ height: 100vh; 
+ width: 100vw;
+ align-items: center;
+ justify-content: center;
+ align-content: center;
+ transition: 1s;
+ display: flex;
+}
+ 
+.filterUL{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+.filterUL li{
+  padding-inline: 1rem;
+  border: solid rgb(122, 122, 122) .1rem;
+  cursor: pointer
+}
+
+.filterUL li:hover{
+  background-color: rgba(0,0,0,.1);
+}
+
+.filterCont h1{
+  font-size: 1em;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 2rem;
+}
+
+.filterCont{
+row-gap: 1rem;
+align-content: flex-start;
+ 
+}
+
+.applyFilters{
+  outline: none;
+  border: solid rgb(4, 88, 172) .1rem;
+  padding-block: .25rem;
+  padding-inline: 2rem;
+  font-size: 1em;
+  font-weight: bolder;
+  cursor: pointer;
+  transition-duration: .5s;
+  background-color:rgba(11, 75, 149, 0);
+  color:rgb(1, 75, 149);
+  bottom: -2em;
+  position:relative;
+}
+
+.applyFilters:active{
+    background-color:rgba(11, 75, 149, 1);
+  color:white;
 }

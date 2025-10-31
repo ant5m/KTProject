@@ -13,9 +13,9 @@ import Projects from './Pages/Projects';
 
 const Header = () =>{
   return(
-    <header style = {{alignItems:"center", justifyContent:"space-between", paddingInline: 10, display:"flex", borderBottomColor:"rgba(0,0,0,.1)", borderBottomWidth:2, borderBottomStyle:"solid",}}>
-    <img style = {{height: 50, }} src = {Logo}/>
-      <ul className = "headerNavUL" style = {{ paddingBlock: 15, listStyleType: "none", display:"flex", flexDirection:"row", columnGap:20, alignContent:"center", paddingInline: 50, justifyContent:"right", width: "100rem"}}>        
+    <header style = {{ position:"fixed", alignItems:"center", paddingInline: 10, display:"flex", borderBottomColor:"rgba(0,0,0,0)", borderBottomWidth:2, borderBottomStyle:"solid", backgroundColor:"white", zIndex: 1000}}>
+    <img style = {{height: 50, position:"absolute" }} src = {Logo}/>
+      <ul className = "headerNavUL" style = {{ position:"relative", left: "-24em", paddingBlock: 15, listStyleType: "none", display:"flex", flexDirection:"row", columnGap:34, alignContent:"center", paddingInline: 0, justifyContent:"center", width:"100rem", backgroundColor:"transparent"}}>        
         <li onClick = {() =>{}}><Link className='Link' to = "/">Home</Link></li>
         <li><Link className = "Link" to = "/projects">Projects</Link></li>
         <li><Link className = "Link" to = "/members">Members</Link></li>

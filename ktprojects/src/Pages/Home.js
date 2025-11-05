@@ -21,6 +21,11 @@ import slide11 from "../assets/slide11.png"
 import slide12 from "../assets/slide12.png"
 import slide13 from "../assets/slide13.png"
 import 'react-slideshow-image/dist/styles.css';
+import { IoVideocam } from 'react-icons/io5';
+ import AnthonyImg from "../assets/anthony.jpeg";
+import { useRef } from 'react';
+import {animate} from "animejs";
+import {motion, useInView, useScroll, useSpring} from "framer-motion"
 
 export default function Home() {
 //testing supabase: 
@@ -38,10 +43,73 @@ export default function Home() {
     slide11,
     slide12,
     slide13,
-  ]
+  ];
+
+  const timelineElementsData = [
+    {
+      context: "Website founded Spring 2024",
+      media:AnthonyImg,
+      mediaTitle:"Anthony Sevilla-Meza"
+    },
+ {
+      context: "Website founded Spring 2024",
+      media:AnthonyImg,
+      mediaTitle:"Anthony Sevilla-Meza"
+    },
+ {
+      context: "Website founded Spring 2024",
+      media:AnthonyImg,
+      mediaTitle:"Anthony Sevilla-Meza"
+    },
+
+   
+  ];
+
+  const timelineElementRef = useRef()
+
+  const {scrollY, scrollYProgress} = useScroll();
+  const opacityFadeIn = useSpring(scrollYProgress, {
+    stiffness: 0, 
+    damping: 50,
+    restDelta: .01
+  })
+  const targetEleme = useRef(); 
+
+  const inView = useInView(targetEleme, {once: true})
+
+  //viewport={{once: true, amount: 1}} animate = {{opacity: 1, y: 0}} initial = {{opacity: 0}} transition={{duration: 3}} 
+  const TimeLineElements = () =>{
+    return(
+      
+  <>
+      {
+      timelineElementsData.map((itm, idx) =>{
+        return <motion.div viewport={{once: true, amount: 1}} animate = {{opacity: 1, y: 0}} initial = {{opacity: 0}} transition={{duration: 3}}    style = {{  display:"flex", flexDirection: idx % 2 == 0? "row" :"row-reverse", justifyContent:"space-evenly", alignItems:"center", }}>
+ <div style= {{display:"flex", backgroundColor:"transparent", flexDirection:"column", alignContent:"center", justifyContent:"center", alignItems:"center"}}>
+      <img src={itm.media} style = {{borderRadius: 500}} width={150}/>
+      <h3>{itm.mediaTitle}</h3>
+</div>
+
+            <div style = {{position:"relative", backgroundColor:"gray", width: 1, height: 250, right: idx % 2 == 0? 0 : 51}}></div>
+
+ 
+       <div style = {{backgroundColor:"rgba(0, 73, 151, 1)", color:"white", padding:"10px 10px 10px 10px", borderRadius: idx % 2 == 0? "100px 10px 10px 100px" : "10px 100px 100px 10px" , fontSize: 17}}>
+        <p>{itm.context}</p>
+
+        
+      </div>
+
+ 
+      </motion.div>
+
+      })}
+      </>
+    )
+  }
   return (
-    <div className="App" style ={{alignContent:"center", alignItems:"center", justifyContent:"center", }}>
-    <div style = {{backgroundColor:"transparent", flexDirection:"row", display:"flex", alignItems:"center", justifyContent:"space-evenly", paddingBlock: 10, columnGap: 10,  paddingInline: 50}}>
+    <div className="App" style ={{ paddingInline: 100,alignContent:"center", alignItems:"center", justifyContent:"center", paddingBottom: 50}}>
+
+    <div style = {{backgroundColor:"transparent", flexDirection:"row", display:"flex", alignItems:"center", justifyContent:"space-evenly", paddingBlock: 10, columnGap: 10,  paddingInline: 10}}>
         <div style = {{backgroundColor:"transparent", width:500,  }}>
      <Fade duration={1000} indicators = {false} arrows={false} autoplay infinite canSwipe >
          {
@@ -63,12 +131,29 @@ export default function Home() {
     <br/>
     <button 
     className = "learnMore"
-  
+     
     title = "Learn More">Explore Projects</button>
-  
-</div>
+</div> 
     </div>
 
+       <div style = {{ marginBlock: 100, textAlign:"left", textIndent: 10, fontWeight:400, color:"rgba(0, 73, 151, 1)", fontSize: 20, lineHeight: 2}}> 
+      <p>
+        Quisque consectetur non ligula vitae blandit. Cras fringilla sem bibendum, porta libero vitae, mollis nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce elementum orci lacus, vitae eleifend arcu porttitor sit amet. Morbi suscipit nunc in felis tempor, quis suscipit arcu vestibulum. Nunc vel dui vitae enim dapibus varius dictum non sem. Vivamus ac diam at lacus aliquam porttitor. Morbi eu finibus sapien, a ornare quam. Morbi consectetur faucibus justo, nec mattis diam iaculis et. Pellentesque dignissim diam in ultrices posuere.
+      </p>
+    </div>
+
+
+<div>
+  <h1 style = {{color: "rgba(0, 73, 151, 1)"}}>Our History</h1>
+</div>
+
+   
+ {/* timeline elements */}
+   <div style = {{rowGap: 0, flexDirection:"column", display:"flex"}}>
+  <TimeLineElements/>
+</div>
+
+ 
     </div>
   );
 }

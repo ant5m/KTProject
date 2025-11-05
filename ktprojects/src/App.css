@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   padding-top: 10em;
+
 }
 
 .App-logo {
@@ -68,28 +69,36 @@ header .headerNavUL li:hover{
 }
 
 .learnMore{
-      border: solid rgba(13, 69, 172) .15em;
+      border: solid rgba(29, 99, 227) .15em;
         padding-inline: 25;
         padding-block:10;
-        background-color:rgb(13, 69, 172);
-        color:white;
+        background-color:rgba(13, 69, 172, 0);
+        color:rgb(29, 99, 227);
         font-size: 1rem;
         font-weight: 500; 
         cursor:pointer;
-        transition-duration: .25s;;
+        transition-duration: .25s;
+        border-radius:4px;
 
 }
 .learnMore:hover{
   background-color: transparent;
-  color:rgb(12, 63, 158);
+  color:rgb(29, 99, 227);
  
 }
 
 .learnMore:active{
   font-size: 1.25em;
+  background-color:rgb(29, 99, 227);
+  color: white;
+
 }
 
+.learnMore:hover{
+  color:white;
+  background-color:rgb(29, 99, 227);
 
+}
 .filter{
   transition-duration: .25s;
 }
@@ -160,4 +169,26 @@ align-content: flex-start;
 .applyFilters:active{
     background-color:rgba(11, 75, 149, 1);
   color:white;
+}
+
+
+.filterSideBar div{
+   display: flex;
+   flex-direction: column;
+  row-gap: .5rem;
+  text-align: left;
+}
+
+.filterSideBar option{
+  text-align:center;
+  padding-block: 2rem;
+
+}
+
+.brotherRow:hover{
+ 
+}
+
+.brotherRow{
+  cursor: pointer;
 }

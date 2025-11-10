@@ -22,7 +22,7 @@ import slide12 from "../assets/slide12.png"
 import slide13 from "../assets/slide13.png"
 import 'react-slideshow-image/dist/styles.css';
 import { IoVideocam } from 'react-icons/io5';
- import AnthonyImg from "../assets/anthony.jpeg";
+import AnthonyImg from "../assets/anthony.jpeg";
 import { useRef } from 'react';
 import {animate} from "animejs";
 import {motion, useInView, useScroll, useSpring} from "framer-motion"
@@ -47,22 +47,45 @@ export default function Home() {
 
   const timelineElementsData = [
     {
-      context: "Website founded Spring 2024",
-      media:AnthonyImg,
-      mediaTitle:"Anthony Sevilla-Meza"
+      context: "KTP Website Founded - Spring 2024",
+      media: Logo,
+      mediaTitle: "Organization Launch"
     },
- {
-      context: "Website founded Spring 2024",
-      media:AnthonyImg,
-      mediaTitle:"Anthony Sevilla-Meza"
+    {
+      context: "First Project Showcase - Building the foundation for member projects",
+      media: slide1,
+      mediaTitle: "Project Showcase"
     },
- {
-      context: "Website founded Spring 2024",
-      media:AnthonyImg,
-      mediaTitle:"Anthony Sevilla-Meza"
+    {
+      context: "Member Recruitment Drive - Expanding our community",
+      media: slide2,
+      mediaTitle: "Recruitment"
     },
-
-   
+    {
+      context: "Technology Workshop Series - Skill development workshops",
+      media: slide3,
+      mediaTitle: "Workshops"
+    },
+    {
+      context: "Community Collaboration - Partnership with local tech companies",
+      media: slide4,
+      mediaTitle: "Partnerships"
+    },
+    {
+      context: "Innovation Lab Launch - Dedicated space for member projects",
+      media: slide5,
+      mediaTitle: "Innovation Hub"
+    },
+    {
+      context: "Annual Hackathon - 48-hour coding competition",
+      media: slide6,
+      mediaTitle: "Hackathon"
+    },
+    {
+      context: "Future Vision - Expanding into new technologies and opportunities",
+      media: BeepBop,
+      mediaTitle: "Future Goals"
+    }
   ];
 
   const timelineElementRef = useRef()
@@ -84,17 +107,76 @@ export default function Home() {
   <>
       {
       timelineElementsData.map((itm, idx) =>{
-        return <motion.div viewport={{once: true, amount: 1}} animate = {{opacity: 1, y: 0}} initial = {{opacity: 0}} transition={{duration: 3}}    style = {{  display:"flex", flexDirection: idx % 2 == 0? "row" :"row-reverse", justifyContent:"space-evenly", alignItems:"center", }}>
- <div style= {{display:"flex", backgroundColor:"transparent", flexDirection:"column", alignContent:"center", justifyContent:"center", alignItems:"center"}}>
-      <img src={itm.media} style = {{borderRadius: 500}} width={150}/>
-      <h3>{itm.mediaTitle}</h3>
+        return <motion.div 
+          key={idx}
+          viewport={{once: true, amount: 0.3}} 
+          animate = {{opacity: 1, y: 0}} 
+          initial = {{opacity: 0, y: 50}} 
+          transition={{duration: 0.8, delay: idx * 0.2}}    
+          style = {{  
+            display:"flex", 
+            flexDirection: idx % 2 == 0? "row" :"row-reverse", 
+            justifyContent:"center", 
+            alignItems:"center", 
+            marginBottom: "0rem",
+            minHeight: "220px",
+            width: "100%",
+            gap: "2rem"
+          }}>
+ <div style= {{
+   display:"flex", 
+   backgroundColor:"transparent", 
+   flexDirection:"column", 
+   alignContent:"center", 
+   justifyContent:"center", 
+   alignItems:"center",
+   minWidth: "180px",
+   flex: 1,
+   maxWidth: "220px"
+ }}>
+      <img 
+        src={itm.media} 
+        style = {{
+          borderRadius: "50%", 
+          border: "4px solid rgba(0, 73, 151, 1)",
+          objectFit: "cover"
+        }} 
+        width={120} 
+        height={120}
+      />
+      <h3 style={{
+        color: "rgba(0, 73, 151, 1)", 
+        marginTop: "10px", 
+        fontSize: "0.9rem",
+        textAlign: "center"
+      }}>{itm.mediaTitle}</h3>
 </div>
 
-            <div style = {{position:"relative", backgroundColor:"gray", width: 1, height: 250, right: idx % 2 == 0? 0 : 51}}></div>
+      {/* Central dot */}
+      <div style={{
+        width: "0px",
+        height: "0px",
+        borderRadius: "50%",
+        backgroundColor: "rgba(0, 73, 151, 1)",
+        border: "0px solid white",
+        boxShadow: "none",
+        zIndex: 2,
+        flexShrink: 0
+      }}></div>
 
  
-       <div style = {{backgroundColor:"rgba(0, 73, 151, 1)", color:"white", padding:"10px 10px 10px 10px", borderRadius: idx % 2 == 0? "100px 10px 10px 100px" : "10px 100px 100px 10px" , fontSize: 17}}>
-        <p>{itm.context}</p>
+       <div style = {{
+         backgroundColor:"rgba(0, 73, 151, 1)", 
+         color:"white", 
+         padding:"20px", 
+         borderRadius: "12px", 
+         fontSize: 16,
+         maxWidth: "280px",
+         minWidth: "240px",
+         boxShadow: "0 4px 12px rgba(0, 73, 151, 0.2)",
+         flex: 1
+       }}>
+        <p style={{margin: 0, lineHeight: "1.5"}}>{itm.context}</p>
 
         
       </div>
@@ -143,17 +225,37 @@ export default function Home() {
     </div>
 
 
-<div>
-  <h1 style = {{color: "rgba(0, 73, 151, 1)"}}>Our History</h1>
+<div style={{textAlign: "center", marginBottom: "3rem"}}>
+  <h1 style = {{color: "rgba(0, 73, 151, 1)", fontSize: "2.5rem", marginBottom: "1rem"}}>Our Journey</h1>
+  <p style = {{color: "rgba(0, 0, 0, 0.7)", fontSize: "1.1rem", maxWidth: "600px", margin: "0 auto"}}>
+    Discover the milestones and achievements that have shaped Kappa Theta Pi into the thriving tech community it is today.
+  </p>
 </div>
 
    
- {/* timeline elements */}
-   <div style = {{rowGap: 0, flexDirection:"column", display:"flex"}}>
-  <TimeLineElements/>
-</div>
-
- 
+   {/* timeline elements */}
+   <div style = {{
+     rowGap: 0, 
+     flexDirection:"column", 
+     display:"flex",
+     position: "relative",
+     alignItems: "center"
+   }}>
+     {/* Central connecting line */}
+     <div style={{
+       position: "absolute",
+       left: "50%",
+       top: 0,
+       bottom: 0,
+       width: "4px",
+       backgroundColor: "rgba(0, 73, 151, 0.2)",
+       transform: "translateX(-50%)",
+       zIndex: 0
+     }}></div>
+     <div style={{position: "relative", zIndex: 1, width: "100%"}}>
+       <TimeLineElements/>
+     </div>
+</div> 
     </div>
-  );
+  )
 }

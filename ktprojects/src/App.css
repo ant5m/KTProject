@@ -192,3 +192,23 @@ align-content: flex-start;
 .brotherRow{
   cursor: pointer;
 }
+
+.projViewContainer img{
+  background-color: black;
+}
+.projViewContainer img:hover{
+  
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  transition: filter 0.3s;
+}
+
+.image-wrapper:hover img {
+  /*filter: brightness(0.75);*/
+}
+

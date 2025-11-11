@@ -1,3 +1,4 @@
+ 
 import '../App.css';
 import Logo from "../assets/logo.png"; 
 import BeepBop from "../assets/beepBop.png"; 
@@ -25,7 +26,6 @@ import AnthonyImg from "../assets/anthony.jpeg";
 import { useRef } from 'react';
 import {animate} from "animejs";
 import {motion, useInView, useScroll, useSpring} from "framer-motion"
- import { useNavigate, useNavigation } from 'react-router-dom';
 
 export default function Home() {
 //testing supabase: 
@@ -47,49 +47,41 @@ export default function Home() {
 
   const timelineElementsData = [
     {
-      year: "2024",
       context: "KTP Website Founded - Spring 2024",
       media: Logo,
       mediaTitle: "Organization Launch"
     },
     {
-      year: "2024",
       context: "First Project Showcase - Building the foundation for member projects",
       media: slide1,
       mediaTitle: "Project Showcase"
     },
     {
-      year: "2024",
       context: "Member Recruitment Drive - Expanding our community",
       media: slide2,
       mediaTitle: "Recruitment"
     },
     {
-      year: "2024",
       context: "Technology Workshop Series - Skill development workshops",
       media: slide3,
       mediaTitle: "Workshops"
     },
     {
-      year: "2025",
       context: "Community Collaboration - Partnership with local tech companies",
       media: slide4,
       mediaTitle: "Partnerships"
     },
     {
-      year: "2025",
       context: "Innovation Lab Launch - Dedicated space for member projects",
       media: slide5,
       mediaTitle: "Innovation Hub"
     },
     {
-      year: "2025",
       context: "Annual Hackathon - 48-hour coding competition",
       media: slide6,
       mediaTitle: "Hackathon"
     },
     {
-      year: "2025",
       context: "Future Vision - Expanding into new technologies and opportunities",
       media: BeepBop,
       mediaTitle: "Future Goals"
@@ -111,115 +103,93 @@ export default function Home() {
   //viewport={{once: true, amount: 1}} animate = {{opacity: 1, y: 0}} initial = {{opacity: 0}} transition={{duration: 3}} 
   const TimeLineElements = () =>{
     return(
-      <div style={{ position: "relative", width: "100%", padding: "20px 0" }}>
-        {/* Central vertical line */}
-        <div style={{
-          position: "absolute",
-          left: "50%",
-          top: "0",
-          bottom: "0",
-          width: "4px",
-          backgroundColor: "rgba(0, 73, 151, 1)",
-          transform: "translateX(-50%)",
-          zIndex: 1,
-          rowGap: 50
-        }}></div>
+      
 
-        {timelineElementsData.map((itm, idx) =>{
-          return (
-            <motion.div
-              key={idx}
-              viewport={{once: true, amount: 0.3}}
-              animate={{opacity: 1, y: 0}}
-              initial={{opacity: 0, y: 50}}
-              transition={{duration: 0.8, delay: idx * 0.2}}
-              style={{
-                display: "flex",
-                justifyContent: idx % 2 === 0 ? "flex-start" : "flex-end",
-                alignItems: "center",
-                marginBottom: "60px",
-                width: "100%",
-                position: "relative"
-              }}
-            >
-              {/* Year label on the line */}
-              <div style={{
-                position: "absolute",
-                left: "50%",
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-                backgroundColor: "white",
-                color: "rgba(0, 73, 151, 1)",
-                padding: "4px 8px",
-                borderRadius: "4px",
-                fontSize: "0.9rem",
-                fontWeight: "bold",
-                border: "2px solid rgba(0, 73, 151, 0)",
-                zIndex: 3
-              }}>
-                {itm.year}
-              </div>
+  <>
+      {
 
-              {/* Blue rounded rectangle containing image and text */}
-              <div style={{
-                backgroundColor: "rgba(0, 73, 151, 0)",
-                color: "white",
-                borderColor:"rgba(0, 73, 151, 1)",
-                borderStyle:"solid",
-                borderWidth: "0.5px",
-                padding: "20px",
-                borderRadius: "16px",
-                maxWidth: "500px",
-                minWidth: "500px",
-                boxShadow: "0 6px 20px rgba(0, 73, 151, 0.3)",
-                display: "flex",
-                alignItems: "center",
-                gap: "16px",
-                marginLeft: idx % 2 === 0 ? "-20px" : "0",
-                marginRight: idx % 2 === 0 ? "0" : "-20px",
-                zIndex: 2,
+      timelineElementsData.map((itm, idx) =>{
+        return <motion.div 
+          key={idx}
+          viewport={{once: true, amount: 0.3}} 
+          animate = {{opacity: 1, y: 0}} 
+          initial = {{opacity: 0, y: 50}} 
+          transition={{duration: 0.8, delay: idx * 0.2}}    
+          style = {{  
+            display:"flex", 
+            flexDirection: idx % 2 == 0? "row" :"row-reverse", 
+            justifyContent:"center", 
+            alignItems:"center", 
+            marginBottom: "0rem",
+            minHeight: "220px",
+            width: "100%",
+            gap: "2.25rem"
+          }}>
+ <div style= {{
+   display:"flex", 
+   backgroundColor:"transparent", 
+   flexDirection:"column", 
+   alignContent:"center", 
+   justifyContent:"center", 
+   alignItems:"center",
+   minWidth: "180px",
+   flex: 1,
+   maxWidth: "220px"
+ }}>
+      <img 
+        src={itm.media} 
+        style = {{
+          borderRadius: "50%", 
+          border: "4px solid rgba(0, 73, 151, 1)",
+          objectFit: "cover"
+        }} 
+        width={120} 
+        height={120}
+      />
+      <h3 style={{
+        color: "rgba(0, 73, 151, 1)", 
+        marginTop: "10px", 
+        fontSize: "0.9rem",
+        textAlign: "center"
+      }}>{itm.mediaTitle}</h3>
+</div>
 
-              }}>
-               
-                <img
-                  src={itm.media}
-                  alt={itm.mediaTitle}
-                  style={{
-                    width: "100px",
-                    height: "100px",
-                    borderRadius: "8px",
-                    objectFit: "cover",
-                    flexShrink: 0,
+      {/* Central dot */}
+      <div style={{
+        width: "0px",
+        height: "0px",
+        borderRadius: "50%",
+        backgroundColor: "rgba(0, 73, 151, 1)",
+        border: "0px solid white",
+        boxShadow: "none",
+        zIndex: 2,
+        flexShrink: 0
+      }}></div>
 
-                  }}
-                />
-                <div style={{ flex: 1 }}>
-                  <h3 style={{
-                    margin: "0 0 8px 0",
-                    fontSize: "1.1rem",
-                    fontWeight: "bold",
-                    color: "rgba(0, 73, 151, 1)"
-                  }}>
-                    {itm.mediaTitle}
-                  </h3>
-                  <p style={{
-                    margin: 0,
-                    lineHeight: "1.5",
-                    fontSize: "0.95rem",
-                    color: "rgba(0, 73, 151, 1)"
-                  }}>
-                    {itm.context}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
+ 
+       <div style = {{
+         backgroundColor:"rgba(0, 73, 151, 1)", 
+         color:"white", 
+         padding:"20px", 
+         borderRadius: "12px", 
+         fontSize: 16,
+         maxWidth: "280px",
+         minWidth: "240px",
+         boxShadow: "0 4px 12px rgba(0, 73, 151, 0.2)",
+         flex: 1
+       }}>
+        <p style={{margin: 0, lineHeight: "1.5"}}>{itm.context}</p>
+
+        
       </div>
-    )
-  }
 
-  const nav = useNavigate();
+      </motion.div>
+
+      })}
+      </>
+
+)
+  }
 
 
   return (
@@ -247,7 +217,7 @@ export default function Home() {
     <br/>
     <button 
     className = "learnMore"
-     onClick = {() => nav("/projects")}
+     
     title = "Learn More">Explore Projects</button>
 </div> 
     </div>
@@ -288,7 +258,7 @@ export default function Home() {
      }}></div>
      <div style={{position: "relative", zIndex: 1, width: "100%", flexDirection:"column", display:"flex", justifyContent:"center", alignItems:"center"}}>
        <TimeLineElements/>
-          <img src = {Logo} height={120} width = {120} style = {{bottom: 5, position:"relative"}}/>
+          <img src = {Logo} height={100} width = {100} style = {{bottom: -10, position:"relative"}}/>
      </div>
 </div> 
     </div>

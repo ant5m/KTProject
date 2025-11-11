@@ -12,6 +12,9 @@ import Members from './Pages/Members';
 import Projects from './Pages/Projects';
 import ProjectView from './Pages/ProjectView';
 import MembersView from './Pages/MembersView';
+import {IoLogoInstagram} from "react-icons/io5"
+import {IoLogoLinkedin} from "react-icons/io5"
+import {IoPaperPlane} from "react-icons/io5"
 
 const Header = () =>{
   return(
@@ -28,10 +31,33 @@ const Header = () =>{
 
 const Footer = () =>{
   return(
-    <footer style = {{overflow: "hidden", display:"flex", flexDirection:"row", justifyContent:"space-evenly", alignContent:"center", backgroundColor:"rgba(11, 76, 149, 1)", color:"white", position:"relative", width: "100%", bottom: 0, paddingBlock: 5, }}>
-      <img src = {BeepBop} style = {{height: 61,  }} />
-      <h3 style = {{fontSize: 11, position:"relative", bottom: -15}}>© Kappa Theta Pi 2025. All rights reserved.</h3>
-      <img src = {BeepBop} style = {{height: 61,  }} />
+    <footer style = {{overflow: "hidden", display:"flex", flexDirection:"column", justifyContent:"center", alignContent:"center", backgroundColor:"rgba(11, 76, 149, 1)", color:"white", position:"relative", width: "100%", bottom: 0, paddingBlock: 5, paddingTop: 10, alignItems:"center" }}>
+      <img src = {BeepBop} style = {{height: 61, position:"absolute", left: 40, bottom: 15}} />
+ 
+      <div style = {{display:"flex", flexDirection:"row", justifyContent:"space-evenly", width: "100%"}}>
+        <div  style = {{display:"flex", flexDirection:"column"}}>
+
+          <h5 style = {{fontSize: 15, textDecoration:"underline"}}>email@bu.edu <IoPaperPlane style ={{transform:"rotateZ(45deg)", right:-3, bottom:-3, position:"relative"}}/> </h5>
+          <h5 style = {{fontSize: 15, textDecoration:"underline"}}>email@bu.edu <IoPaperPlane style ={{transform:"rotateZ(45deg)", right:-3, bottom:-3, position:"relative"}}/></h5>
+          <h5 style = {{fontSize: 15, textDecoration:"underline"}}>email@bu.edu<IoPaperPlane style ={{transform:"rotateZ(45deg)", right:-3, bottom:-3, position:"relative"}}/></h5>
+
+        </div>
+
+            <div style = {{display:"flex", flexDirection:"column", alignItems:"flex-start", justifyContent:"center"}}>
+
+          <h5 style = {{fontSize: 15, alignItems:"center",justifyContent:"center", display:"flex", flexDirection:"row", columnGap: 10}}><IoLogoInstagram size = {20}/> Instagram</h5>
+          <h5 style = {{fontSize: 15, alignItems:"center",justifyContent:"center", display:"flex", flexDirection:"row", columnGap: 10}}><IoLogoLinkedin size = {20}/> LinkedIn</h5>
+          <h5  style = {{fontSize: 15, alignItems:"center",justifyContent:"center", display:"flex", flexDirection:"row", columnGap: 10}}><img src = {Logo} height = {30} width = {30} />ktpWebsite</h5>
+        </div>
+      </div>
+
+  
+
+        <h3 style = {{fontSize: 12, position:"relative", bottom: 0, }}>© Kappa Theta Pi 2025. All rights reserved.</h3>
+
+
+   <img src = {BeepBop} style = {{height: 61, position:"absolute", right: 40, bottom:15}} />
+
     </footer>
   )
 }

@@ -121,7 +121,7 @@ export default function Home() {
             marginBottom: "0rem",
             minHeight: "220px",
             width: "100%",
-            gap: "2rem"
+            gap: "2.25rem"
           }}>
  <div style= {{
    display:"flex", 
@@ -181,13 +181,14 @@ export default function Home() {
         
       </div>
 
- 
       </motion.div>
 
       })}
       </>
     )
   }
+
+
   return (
     <div className="App" style ={{ paddingInline: 100,alignContent:"center", alignItems:"center", justifyContent:"center", paddingBottom: 50}}>
 
@@ -252,8 +253,9 @@ export default function Home() {
        transform: "translateX(-50%)",
        zIndex: 0
      }}></div>
-     <div style={{position: "relative", zIndex: 1, width: "100%"}}>
+     <div style={{position: "relative", zIndex: 1, width: "100%", flexDirection:"column", display:"flex", justifyContent:"center", alignItems:"center"}}>
        <TimeLineElements/>
+          <img src = {Logo} height={100} width = {100} style = {{bottom: -10, position:"relative"}}/>
      </div>
 </div> 
     </div>
